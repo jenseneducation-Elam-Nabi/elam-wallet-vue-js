@@ -104,10 +104,12 @@ form {
     padding: 12px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    outline: none;
   }
   .my-btn {
     margin-top: 1rem;
     cursor: pointer;
+    width: 100%;
     outline: none;
   }
 }
