@@ -30,7 +30,8 @@ export default {
     changeVendor(vendor) {
       if (vendor === "ninja-bank") {
         this.cardInfo.backgroundColor = "#000";
-        this.cardInfo.vendor = require("@/assets/vendor-evil.svg");
+        this.cardInfo.vendor = require("@/assets/vendor-ninja.svg");
+        this.cardInfo.chip = require("@/assets/chip-light.svg");
       }
       if (vendor === "bitcoin-inc") {
         this.cardInfo.backgroundColor = "#ffb649";
