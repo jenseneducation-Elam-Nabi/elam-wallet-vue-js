@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="addCard">
-    <label for="card-number">Card number</label>
+    <label for="card-number">CARD NUMBER</label>
     <input
       type="text"
       id="card-number"
@@ -8,7 +8,7 @@
       v-model="cardInfo.cardNr"
       placeholder="XXXX-XXXX-XXXX-XXXX"
     />
-    <label for="cardholder-name">Cardholder name</label>
+    <label for="cardholder-name">CARDHOLDER NAME</label>
     <input
       type="text"
       id="cardholder-name"
@@ -18,7 +18,7 @@
 
     <div>
       <div>
-        <label for="month">Month</label>
+        <label for="month">MONTH</label>
         <select id="month" v-model="cardInfo.month">
           <option value="01">01</option>
           <option value="02">02</option>
@@ -35,7 +35,7 @@
         </select>
       </div>
       <div>
-        <label for="year">Year</label>
+        <label for="year">YEAR</label>
         <select id="year" v-model="cardInfo.year">
           <option value="21">21</option>
           <option value="22">22</option>
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <label for="vendor">Vendor</label>
+    <label for="vendor">VENDOR</label>
     <select id="vendor" v-model="cardInfo.vendor" @change="$emit('change-vendor', cardInfo.vendor)">
       <option value="bitcoin-inc">Bitcoin Inc</option>
       <option value="ninja-bank">Ninja Bank</option>
@@ -54,7 +54,7 @@
       <option value="evil-corp">Evil Corp</option>
     </select>
 
-    <button class="my-btn">Add card</button>
+    <button class="my-btn">ADD CARD</button>
   </form>
 </template>
 
