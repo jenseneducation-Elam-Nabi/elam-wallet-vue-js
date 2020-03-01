@@ -9,7 +9,9 @@
       <img :src="cardInfo.vendor" alt="card-info" />
     </div>
 
-    <h1 class="card-nr">{{cardInfo.cardNr}}</h1>
+    <h1 class="card-nr" v-if="cardInfo.cardNr">{{ AddSpace }}</h1>
+
+    <!-- <h1 class="card-nr">{{cardInfo.cardNr}}</h1> -->
 
     <ul class="info">
       <li>
@@ -31,6 +33,13 @@ export default {
   name: "Card",
   props: {
     cardInfo: Object
+  },
+  computed: {
+    AddSpace() {
+      let cNumber = this.cardInfo.cardNr;
+      let cNumberSpaces = cNumber.match(/.{1,4}/g);
+      return cNumberSpaces.join(" ");
+    }
   }
 };
 </script>

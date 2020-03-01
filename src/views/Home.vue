@@ -19,7 +19,7 @@ export default {
     cardInfo: {
       chip: require("@/assets/chip-light.svg"),
       vendor: require("@/assets/vendor-evil.svg"),
-      cardNr: "1234 5678 9101 1123",
+      cardNr: "1234567891011123",
       owner: "Kristina Reinaldo",
       month: "10",
       year: "20",

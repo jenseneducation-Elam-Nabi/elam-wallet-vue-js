@@ -23,6 +23,7 @@ export default {
       owner: "",
       month: "",
       year: "",
+      optionsVendor: null,
       backgroundColor: "#999"
     }
   }),
