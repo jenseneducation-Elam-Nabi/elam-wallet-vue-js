@@ -13,7 +13,7 @@ new Vue({
         chip: require("./assets/chip-light.svg"),
         vendor: require("./assets/vendor-evil.svg"),
         cardNr: "1234567891011123",
-        owner: "Kristina Reinaldo",
+        owner: "Kristina Olofsson",
         month: "02",
         year: "20",
         backgroundColor: "#D92E4C"

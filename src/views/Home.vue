@@ -13,22 +13,22 @@ import Card from "@/components/Card";
 import CardStack from "@/components/CardStack.vue";
 
 export default {
-  name: "App",
+  name: "Home",
   components: { Top, Card, CardStack },
-  data: () => ({
-    cardInfo: {
-      chip: require("@/assets/chip-light.svg"),
-      vendor: require("@/assets/vendor-evil.svg"),
-      cardNr: "1234567891011123",
-      owner: "Kristina Reinaldo",
-      month: "10",
-      year: "20",
-      backgroundColor: "#D92E4C"
-    }
-  }),
+  data() {
+    return {
+      cardInfo: this.$root.$data.cards[0]
+    };
+  },
   methods: {
     changeCard(card) {
       this.cardInfo = card;
+    }
+  },
+
+  computed: {
+    cards() {
+      return this.$root.$data.cards;
     }
   }
 };
