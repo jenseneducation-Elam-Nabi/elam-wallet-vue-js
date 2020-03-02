@@ -1,7 +1,8 @@
 <template>
   <div class="card-container">
     <Top headline="E-wallet" smallHeadline="Active card" />
-    <Card :cardInfo="cardInfo" />
+    <h4 v-if="!cardInfo">Please select the card of your choice!</h4>
+    <Card v-else class="first-card" :cardInfo="cardInfo" />
     <CardStack @change-card="changeCard" />
     <router-link class="my-btn" :to="{ name: 'AddCard' }">Add new card</router-link>
   </div>
@@ -17,18 +18,12 @@ export default {
   components: { Top, Card, CardStack },
   data() {
     return {
-      cardInfo: this.$root.$data.cards[0]
+      cardInfo: this.$root.$data.cards[0] && 0
     };
   },
   methods: {
     changeCard(card) {
       this.cardInfo = card;
-    }
-  },
-
-  computed: {
-    cards() {
-      return this.$root.$data.cards;
     }
   }
 };
@@ -42,10 +37,21 @@ export default {
   max-width: 560px;
   background: #fff;
 
+  .first-card {
+    i {
+      display: none;
+    }
+  }
+
+  h4 {
+    text-align: center;
+  }
+
   .my-btn {
     padding: 20px;
     width: 80%;
     margin: auto;
+    outline: none;
     display: block;
     border: 2px solid #000;
     text-align: center;

@@ -1,7 +1,7 @@
 <template>
   <div class="card-container">
     <Top headline="Add new bank card" smallHeadline="New card" />
-    <Card :cardInfo="cardInfo" />
+    <Card class="first-card" :cardInfo="cardInfo" />
     <CardForm @change-vendor="changeVendor" :cardInfo="cardInfo" />
   </div>
 </template>

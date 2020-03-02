@@ -4,14 +4,13 @@
     class="my-card"
     :style="{'background-color': cardInfo.backgroundColor}"
   >
+    <i class="fas fa-trash" @click="deleteCard"></i>
+
     <div class="card-icon">
       <img :src="cardInfo.chip" alt="card-info" />
       <img :src="cardInfo.vendor" alt="card-info" />
     </div>
-
     <h1 class="card-nr" v-if="cardInfo.cardNr">{{ AddSpace }}</h1>
-
-    <!-- <h1 class="card-nr">{{cardInfo.cardNr}}</h1> -->
 
     <ul class="info">
       <li>
@@ -40,6 +39,14 @@ export default {
       let cNumberSpaces = cNumber.match(/.{1,4}/g);
       return cNumberSpaces.join(" ");
     }
+  },
+  methods: {
+    deleteCard() {
+      if (confirm("This will delete choosen creditcard, are you sure?")) {
+        this.$root.$emit("delete-card", this.cardInfo.id);
+      }
+      return;
+    }
   }
 };
 </script>
@@ -53,12 +60,30 @@ export default {
   color: #fff;
   z-index: 1;
   flex-flow: column;
+  position: relative;
   padding: 2rem 1rem;
   border-radius: 12px;
   backface-visibility: hidden;
   justify-content: space-between;
   text-shadow: 0 0 5px rgba(#000, 0.2);
   box-shadow: 0 0 20px rgba(#000, 0.4);
+
+  i {
+    top: -10px;
+    right: -10px;
+    color: red;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    text-shadow: 0 0 15px rgba(#000, 0.3);
+
+    &:hover {
+      opacity: 0.8;
+      transform: scale(1.3);
+    }
+  }
+
   .card-icon {
     display: flex;
     align-items: center;
